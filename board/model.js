@@ -7,10 +7,6 @@ const BoardSchema = new Schema({
     type: String,
     required: true,
     trim: true
-  },
-  lists: {
-    type: Array,
-    default: []
   }
 });
 
