@@ -1,10 +1,11 @@
 const request = require('supertest');
 const {ObjectID} = require('mongodb');
 
-const app = require('../index');
-const {lists, populateLists} = require('../db/seed');
+const app = require('../app/app');
+const {boards, populateBoards, lists, populateLists} = require('../db/seed');
 const List = require('../list/model');
 
+beforeEach(populateBoards);
 beforeEach(populateLists);
 
 describe('GET /lists', () => {
@@ -50,10 +51,11 @@ describe('GET /lists/:id', () => {
 describe('POST /lists', () => {
   it('should create a new List', done => {
     const name = 'List 3';
+    const boardId = boards[0]._id.toHexString();
 
     request(app)
       .post('/lists')
-      .send({name})
+      .send({name, _board: boardId})
       .expect(200)
       .expect(res => {
         expect(res.body.name).toBe(name);

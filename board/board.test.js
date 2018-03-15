@@ -1,7 +1,7 @@
 const request = require('supertest');
 const {ObjectID} = require('mongodb');
 
-const app = require('../index');
+const app = require('../app/app');
 const {boards, populateBoards} = require('../db/seed');
 const Board = require('../board/model');
 
