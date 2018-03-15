@@ -15,3 +15,52 @@ describe('GET /boards', () => {
       .expect(200);
   });
 });
+
+
+describe('GET /boards/:id', () => {
+  it('should get one board', () => {
+
+  });
+
+  it('should return 404 if board was not found', () => {
+
+  });
+
+  it('should return 404 for non-object ids', () => {
+
+  });
+});
+
+describe('POST /boards', () => {
+  it('should create a new board', () => {
+
+  });
+});
+
+describe('PUT /boards/:id', () => {
+  it('should update the name of the board', () => {
+
+  });
+
+  it('should return 404 if board was not found', () => {
+
+  });
+
+  it('should return 404 for non-object ids', () => {
+
+  });
+});
+
+describe('DELETE /boards/:id', () => {
+  it('should delete a board by its id', () => {
+
+  });
+
+  it('should return 404 if board was not found', () => {
+
+  });
+
+  it('should return 404 for non-object ids', () => {
+
+  });
+});
