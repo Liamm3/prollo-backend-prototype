@@ -1,7 +1,8 @@
 {
     "env": {
         "es6": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "extends": ["eslint:recommended", "google"],
     "parserOptions": {
@@ -25,6 +26,7 @@
             "error",
             "always"
         ],
-        "comma-dangle": "off"
+        "comma-dangle": "off",
+        "arrow-parens": "off"
     }
 }
