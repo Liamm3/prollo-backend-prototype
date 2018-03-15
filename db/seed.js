@@ -8,24 +8,18 @@ const boardTwoId = new ObjectID();
 const boards = [
   {
     _id: boardOneId,
-    name: 'Board 1',
-    lists: []
+    name: 'Board 1'
   },
   {
     _id: boardTwoId,
-    name: 'Board 2',
-    lists: []
+    name: 'Board 2'
   }
 ];
 
 const populateBoards = async done => {
   await Board.remove({});
-
-  const boardOne = new Board(boards[0]).save();
-  const boardTwo = new Board(boards[1]).save();
-  await Promise.all([boardOne, boardTwo]);
-
-  done();
+  await Board.insertMany(boards);
+  return done();
 };
 
 module.exports = {
